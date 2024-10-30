@@ -1,0 +1,97 @@
+\q{24}{Rock Solid Confidence}\\[10pt]
+A petrologist (someone who studies rocks) has collected a random sample of 500 sandstone rocks from a desert region. They are interested in knowing the mean density of sandstone rocks in that region. They find that the mean density of the sample is 2.4 grams/cm$^3$. Instead of giving just one estimate, they wish to provide a range of values.
+
+\begin{enumerate}
+    \subq{6} \textbf{Select one of the options from each parts i-vi to fill in the corresponding blanks in the sentence below.}
+    \vskip 0.05in
+    The actual mean density of the sandstone rocks in the region is the population \underline{\hspace{0.25in}}(i)\underline{\hspace{0.25in}} . Rather than going back to the original population and taking a new sample, the scientist will use the sample they already have. This technique is known as bootstrapping.  To use the bootstrap method, the scientist will take many samples \underline{\hspace{0.25in}}(ii)\underline{\hspace{0.25in}} from the \underline{\hspace{0.25in}}(iii)\underline{\hspace{0.25in}} to create one bootstrapped sample. We find the \underline{\hspace{0.25in}}(iv)\underline{\hspace{0.25in}} of each bootstrap sample. After we've completed this process, we can compute a \underline{\hspace{0.25in}}(v)\underline{\hspace{0.25in}}. We are more confident that our procedure will generate an interval that captures the actual mean density when we use a \underline{\hspace{0.25in}}(vi)\underline{\hspace{0.25in}} interval.
+    
+        \vskip 0.1in
+        
+    \begin{enumerate}
+        \item
+            {\solutionbubble} parameter
+            \hspace{0.25in}{\bubble} statistic
+        \item
+            {\bubble} without replacement
+            \hspace{0.25in}{\solutionbubble} with replacement
+        \item
+            {\bubble} population
+            \hspace{0.25in}{\solutionbubble} original sample
+        \item
+            {\bubble} middle 95\%
+            \hspace{0.25in}{\solutionbubble} mean
+        \item
+            {\solutionbubble} confidence interval
+            \hspace{0.25in}{\bubble} p-value
+        \item
+            {\solutionbubble} wider
+            \hspace{0.25in}{\bubble} narrower
+    \end{enumerate}
+    \vskip 0.1in
+    
+    \subq{4} Select all of the following conditions under which bootstrapping would not be an effective estimation technique.
+    \vskip .1in
+    \begin{enumerate}
+        \checkbox The original sample is very big.\\[2pt]
+        \solutionbox You are trying to estimate the minimum value of a population.\\[2pt]
+        \solutionbox The original sample is very small.\\[2pt]
+    	\checkbox The original sample is a random sample from the population.\\[2pt]
+        \checkbox You are trying to estimate the median value of a population.\\[2pt]
+	    \checkbox The distribution of your population is not roughly bell shaped. \\[2pt]
+
+    \end{enumerate}
+
+    
+    \subq{6} The table called \lsi+rocks+ has one column, \lsi+density+, containing the density of the 500 sampled rocks in the region. Write code such that \lsi+left_end+ and \lsi+right_end+ evaluate to the endpoints of a ninety percent \textbf{ (90\%)}  confidence interval for the mean density of rocks in the region using 10,000 bootstrapped resamples.
+    \vskip .1in
+    \solutionimage
+    {
+    {\lsi+means = +\bkmed++}\\[10pt]
+    {\lsi+for+\bkmed+:+}\\[10pt]
+    \hspace*{0.5in}{\lsi+resample =+\bklong}\\[10pt]
+    \hspace*{0.5in}{\lsi+resample_mean =+\bklong}\\[10pt]
+    \hspace*{0.5in}{\lsi+means =+\bklong}\\[10pt]
+    {\lsi+left_end = +\bk+( 5 , +\bk+)+}\\[10pt]
+    {\lsi+right_end = +\bk+(+\bkshort+, +\bk+)+}
+    }
+    {
+    {\lsi+means = make_array()+}\\[10pt]
+    {\lsi+for i in np.arange(10000):+}\\[10pt]
+    \hspace*{0.5in}{\lsi+resample = rocks.sample()+}\\[10pt]
+    \hspace*{0.5in}{\lsi+resample_mean = np.mean(resample.column("density"))+}\\[10pts]
+    \hspace*{0.5in}{\lsi+means = np.append(means, resample_mean)+}\\[10pt]
+    {\lsi+left_end = percentile(5, means)+}\\[10pt]
+    {\lsi+right_end = percentile(95, means)+}\\[10pt]
+    }
+    
+
+    \clearpage
+    \subq{4} Select \textbf{all} answers that we can justifiably conclude. If you do not have enough information to evaluate whether the statement is true or false, DO NOT select it.
+    \vskip .1in
+    \begin{enumerate}
+        \checkbox If the petrologist convinces 100 of their colleagues to independently take new random samples of 500 rocks, and each colleague generates one approximate 80\% confidence interval for the true mean rock density in the region,  about 95 of the 100 intervals will contain the true mean rock density of the region. \\[2pt]
+        \solutionbox If the petrologist convinces 100 of their colleagues to independently take new random samples of 500 rocks, and each colleague generates one approximate 90\% confidence interval for the true mean rock density in the region,  about 90 of the 100 intervals will contain the true mean rock density of the region.\\[2pt] 
+        \solutionbox If the petrologist's colleague runs the code from part (c), but changes the endpoints of the interval (in the last two lines) to the 0.5th and 99.5th percentile, the resulting interval will be wider than the petrologist's original interval. \\[2pt]
+        \checkbox  If the interval calculated in part c) is [1.9g/cm$^3$, 2.8g/cm$^3$], there is a 90\% chance that the true mean rock density of the region is in that interval.
+    \end{enumerate}
+    \vskip 0.1in
+    \subq{4} If the width of a 90\% confidence interval you calculated was 1 gram/cm$^3$, \textbf{what is an estimate of the standard deviation of the rock densities in the population} of rocks from which we drew our sample of size 500? 
+    \vskip 0.1in
+    The table below shows percentages of values in a certain range under the normal curve, in addition to those already in the exam reference guide.
+    
+    \begin{center}
+    \begin{tabular}{c|c}
+    {\bf Percent in Range} & {\bf Normal Distribution} \\ \hline
+    average $\pm$ 1.3 SDs & about 80\% \\ \hline
+    average $\pm$ 1.65 SDs & about 90\% \\ 
+    \end{tabular}
+    \end{center}
+    \\[10pt]
+    Show your calculations below. You should NOT simplify arithmetic expressions. Please draw a box around your final answer.
+    
+    \solution{$1 = 2 \times 1.65 \times \text{SD of sample means}$}\\[5pt]
+    \solution{$\text{SD of sample means} = \frac{1}{3.3}$}\\[5pt]
+    \solution{$\frac{1}{3.3} = \frac{\text{population SD}}{\sqrt{500}}$}\\[5pt]
+    \solution{$\text{population SD} = \frac{\sqrt{500}}{3.3}$}
+\end{enumerate}

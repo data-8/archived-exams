@@ -1,0 +1,76 @@
+\q{18}{What's The Chance I Like Boba?}
+\vskip .2 in
+
+UGSI Katherine loves getting boba in Berkeley, and she goes to three different boba shops. Since her favorite boba place is Gong Cha, half of the time that she gets boba she goes to Gong Cha, and the other half of the time she randomly chooses between Yi Fang and U-Cha, with an equal chance of choosing either shop. Katherine has very specific boba tastes. At U-Cha, she gets milk tea 2/3 of the time and fruit tea 1/3 of the time. At Yi Fang, she only gets fruit tea. At Gong Cha she chooses between fruit tea and milk tea with equal probability of choosing each one. 
+
+\begin{enumerate}
+\vskip .15in
+\subq{3} If Katherine gets boba twice, what is the probability that she goes to Yi Fang both times?
+\vskip 0.1in
+\begin{tabular}{l@{\hskip 1in}l@{\hskip 1in}l@{\hskip 1in}l}
+{\bubble} \quad ${\displaystyle (\tfrac{1}{4})\times 2}$
+&\solutionbubble \quad ${\displaystyle (\frac{1}{4})^2}$
+&\bubble \quad ${\displaystyle 1-((\tfrac{1}{4})^2)}$\\[10pt]
+\bubble \quad ${\displaystyle 1-((\tfrac{1}{4})\times 2)}
+$%\\[10pt]
+&\bubble \quad ${\displaystyle (\tfrac{1}{4})\times(\tfrac{1}{2}) }$
+&\bubble \quad ${\displaystyle (\tfrac{1}{4})+(\tfrac{1}{2})}$
+\end{tabular}
+
+\vskip .15in
+\subq{3} If Katherine gets boba once, what is the probability that she goes to U-Cha and gets fruit tea?\vskip 0.1in
+\begin{tabular}{l@{\hskip 1in}l@{\hskip 1in}l@{\hskip 1in}l}
+\solutionbubble \quad ${\displaystyle \tfrac{1}{4}\times\tfrac{1}{3}}$
+&\bubble \quad ${\displaystyle \tfrac{1}{4}+\tfrac{1}{3}}$ \\[10pt]
+\bubble \quad ${\displaystyle  \tfrac{1}{3}}$
+&\bubble \quad ${\displaystyle 1-((\tfrac{1}{4})\times(\tfrac{1}{3}))}$
+\end{tabular}
+
+\vskip .15in
+\subq{3} What is the probability that Katherine gets fruit tea if she got boba once? \vskip 0.1in
+\begin{tabular}{l@{\hskip 1in}l@{\hskip 1in}l@{\hskip 1in}l}
+\bubble \quad ${ \displaystyle (\tfrac{1}{2})^2\times(\tfrac{1}{4})^2\times(\tfrac{1}{3}) }$
+&\bubble \quad ${\displaystyle \tfrac{1}{2} + 1 + \tfrac{1}{3}}$\\[10pt]
+\bubble \quad ${\displaystyle \tfrac{1}{2} + \tfrac{1}{3}}$
+&\solutionbubble \quad ${\displaystyle (\tfrac{1}{2})^2 +(\tfrac{1}{4}) + (\tfrac{1}{4})\times(\tfrac{1}{3})}$
+\end{tabular}
+
+
+\vskip .15in
+\subq{3} Given that Katherine bought milk tea, what is the probability that she went to Gong Cha? \vskip 0.1in
+\begin{tabular}{l@{\hskip 1in}l@{\hskip 1in}l@{\hskip 1in}l}
+\bubble \quad ${\displaystyle \frac{1}{2} } $
+&\bubble \quad ${\displaystyle (\tfrac{1}{4}\times\tfrac{2}{3})/[(\tfrac{1}{2}\times\tfrac{1}{2}) + (\tfrac{1}{4}\times\tfrac{2}{3})] }$\\[10pt]
+\solutionbubble \quad ${\displaystyle (\tfrac{1}{2}\times\tfrac{1}{2})/[(\tfrac{1}{2}\times\tfrac{1}{2}) + (\tfrac{1}{4}\times\tfrac{2}{3})] }$
+&\bubble \quad ${\displaystyle \tfrac{1}{2}\times\tfrac{1}{2}}$
+\end{tabular}
+
+\vskip .15in
+\subq{3} If Katherine got boba 3 times, what is the probability that she went to UCha at least twice?\vskip .1in
+\begin{tabular}{l@{\hskip 1in}l@{\hskip 1in}l@{\hskip 1in}l}
+\bubble \quad ${\displaystyle 1 - (\tfrac{3}{4})^3}$
+&\bubble \quad ${\displaystyle \tfrac{1}{4}^3 + \tfrac{1}{2}\times \tfrac{1}{3}\times \tfrac{1}{4}}$\\[10pt]
+\solutionbubble \quad ${\displaystyle (\tfrac{1}{4})^3 + 3\times(\tfrac{1}{4}^2\times\tfrac{3}{4}))}$
+&\bubble \quad ${\displaystyle \tfrac{1}{4}}$
+\end{tabular}
+
+\vskip .2in
+\subq{3} Read the following code and determine what value \lsi+final_value+ best approximates.\\[6pt]
+\lsi+counter = 0+\\
+\lsi+for i in np.arange(1000):+\\
+\lsi+     if np.random.choice(np.arange(12)) < 3:+\\
+\lsi+          if np.random.choice(np.arange(6)) > 3:+\\
+\lsi{               counter = counter + 1}\\
+\lsi+final_value = counter / 1000+\\
+
+
+\bubble \quad The number of times that Katherine gets milk tea in 1000 visits.\\
+\bubble \quad The probability that Katherine gets fruit tea on any particular visit.\\
+\solutionbubble \quad The probability that Katherine goes to U-Cha and gets fruit tea.\\
+\bubble \quad The number of times that Katherine gets fruit tea when she goes to Yi Fang.\\
+\bubble \quad The probability that Katherine goes to Gong Cha  and gets fruit tea or she goes to U-Cha and gets milk tea.\\
+\bubble \quad The probability that Katherine gets milk tea on any particular visit. 
+
+
+
+\end{enumerate} 

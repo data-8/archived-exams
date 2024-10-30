@@ -1,0 +1,112 @@
+\q{28}{Issues with Influenza}
+
+The national news reports widespread hospitalizations from flu this year in the United States. Since you don't remember the media reporting on this in the past, you want to know if this year's incidence rate of flu (the proportion of the population who become infected with influenza) in the U.S. is higher than usual. Since you only have the resources to take a random survey of 1000 people, you decide to conduct a hypothesis test to find out.
+
+After conducting your random survey of 1000 people, you find that the incidence rate among this sample is 0.35. In modern history (since the invention of the influenza vaccine), the expected incidence rate is 0.2.
+\begin{enumerate} 
+    \subq{3} What is the appropriate null hypothesis?
+    \vskip 0.05in
+    {\bubble} Our sample is large enough to represent the US population.\\[2pt]
+    {\bubble} The true incidence rate is 0.35, and 0.2 is an inaccurate estimate of historical incidence rates.\\[2pt]
+    {\bubble} The true incidence rate of influenza this year is greater than 0.2, and our survey incidence rate is representative of the true incidence rate.\\[2pt]
+    {\solutionbubble} The true incidence rate of influenza this year is 0.2, and any deviation from this rate is due to chance in the selection of the random sample.\\[2pt]
+
+    \subq{3} What is the appropriate alternative hypothesis?
+    \vskip 0.05in
+    {\bubble} Our sample was not representative of the US population.\\[2pt]
+    {\bubble} The influenza vaccine is not very effective this year.\\[2pt]
+    {\solutionbubble} The true incidence rate of influenza this year is greater than 0.2.\\[2pt]
+    {\bubble} The true incidence rate of influenza this year is less than 0.2.\\[2pt]
+
+    \subq{3} What is an appropriate test statistic?
+    \vskip 0.05in
+    {\bubble} Number of influenza cases in our sample\\[2pt]
+    {\bubble} Population proportion of influenza cases\\[2pt]
+    {\solutionbubble} Sample proportion of influenza cases\\[2pt]
+
+    \subq{8} Write code below so that \lsi{test_proportions} evaluates to 10,000 simulated values of your test statistic under the null hypothesis.
+    \vskip 0.1in
+    \solutionimage
+    {
+    {\lsi+expected_props = make_array(+\bk+,+\bk+)+}\\[4pt]
+    {\lsi+sample_size = 1000+}\\[8pt]
+    {\lsi+def simulated_proportion(expected_props, sample_size):+}\\[10pt]
+    \hspace*{0.5in}{\lsi+null_props = +\bk+(+\bk+,+\bkmed+)+}\\[10pt]
+    \hspace*{0.5in}{\lsi+prop_sick = null_props.+\bk+(+\bk+)+}\\[10pt]
+    \hspace*{0.5in}{\lsi+return +\bkmed++}\\[18pt]
+    {\lsi+test_props = +\bklong}\\[15pt]
+    {\lsi+for  +\bkmed+:+}\\[10pt]
+    \hspace*{0.5in}{\lsi+one_statistic = +\bklong}\\[10pt]
+    \hspace*{0.5in}{\lsi++\bk+ = +\bk+(+\bk+, one_statistic)+}
+    }
+    {
+    {\lsi+expected_props = make_array(0.2,0.8)+}\\[4pt]
+    {\lsi+sample_size = 1000+}\\[8pt]
+    {\lsi+def simulated_proportion(expected_props, sample_size):+}\\[10pt]
+    \hspace*{0.5in}{\lsi+null_props = sample_proportions(sample_size,expected_props)+}\\[10pt]
+    \hspace*{0.5in}{\lsi+prop_sick = null_props.item(0)+}\\[10pt]
+    \hspace*{0.5in}{\lsi+return prop_sick+}\\[18pt]
+    {\lsi+test_props = make_array()+}\\[15pt]
+    {\lsi+for  i in np.arange(10000):+}\\[10pt]
+    \hspace*{0.5in}{\lsi+one_statistic = simulated_proportions(expected_props, sample_size)+}\\[10pt]
+    \hspace*{0.5in}{\lsi+test_props = np.append(test_props, one_statistic)+}
+    }
+    
+
+
+
+    \subq{3} \textbf{Select one of the options from parts i-iii to fill in the corresponding blanks in the sentence below.}
+
+    To calculate the p-value for this test, we would find the proportion of  \underline{\hspace{0.25in}}(i)\underline{\hspace{0.25in}} under the \underline{\hspace{0.25in}}(ii)\underline{\hspace{0.25in}} that were \underline{\hspace{0.25in}}(iii)\underline{\hspace{0.25in}} our observed test statistic.
+    \vskip 0.1in
+
+        \vskip 0.1in
+
+    \begin{enumerate}
+        \item
+            {\bubble} observed test statistic
+            \hspace{0.25in}{\solutionbubble} simulated test statistics
+            \hspace{0.25in}{\bubble} years in the past century
+
+        \vskip 0.1in
+        \item 
+            \solutionimage{\bubble}{\filledbubble} null hypothesis
+            \hspace{0.25in}{\bubble} alternative hypothesis
+        
+        \vskip 0.1in
+        \item 
+            {\bubble} equal to
+            \hspace{0.25in}{\bubble} less than or equal to
+            \hspace{0.25in}\solutionimage{\bubble}{\filledbubble} greater than or equal to
+    \end{enumerate}
+    \vskip 0.1in
+
+    \subq{2} You find your p-value to be 0.04. Under which of these p-value cutoff level(s) would you \textbf{fail} to reject the null? Select all that apply. 
+    \vskip 0.1in
+    \begin{tabular} {l@{\hskip 0.25in}l@{\hskip 0.25in}l@{\hskip 0.25in}l@{\hskip 0.25in}l@{\hskip 0.25in}l}
+    {\bubble} 0.10&
+	{\bubble} 0.07&
+	{\bubble} 0.05&
+	\solutionimage{\bubble}{\filledbubble} 0.03&
+	\solutionimage{\bubble}{\filledbubble} 0.01
+	\end{tabular}
+
+    \vskip 0.2in
+    \subq{3} With a 5\% p-value cutoff and your p-value of 4\%, and considering your original hypothesis, would you conclude that the influenza vaccine was not very effective this year?
+    \vskip 0.1in
+    {\bubble} No, because you did not reject the null hypothesis.\\[2pt]
+    {\bubble} Yes, because you found a significant difference in the influenza rates.\\[2pt]
+    \solutionimage{\bubble}{\filledbubble} No, because the null hypothesis was about the incidence rate, not vaccine efficacy.\\[2pt]
+    {\bubble} Yes, because your p-value was above 0\%.
+
+    \vskip 0.2in
+    \subq{3} You are discussing your survey methodology with a friend and reveal that the population from which your survey participants were selected was the population of all Berkeley undergraduates. Assuming you carried out the steps in parts e-f, would your method successfully test the null hypothesis that the incidence rate is higher than expected in the U.S. population? Select one option. 
+    \vskip 0.1in
+    {\bubble} Yes, because you selected students at random for your survey.\\[2pt]
+    {\bubble} Yes, because your p-value was small.\\[2pt]
+    {\bubble} No, because 1000 individuals is not a big enough sample to run a hypothesis test.\\[2pt]
+    \solutionimage{\bubble}{\filledbubble} No, because your sample is not representative of the US population.
+    
+    \solution{Note: There was a small typo in the question - it should have said "successfully test the hypothesis", not "successfully test the null hypothesis". This was not the null hypothesis we were simulating under. However, this typo does not affect the answer.}
+
+\end{enumerate}

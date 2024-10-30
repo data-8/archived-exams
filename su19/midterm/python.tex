@@ -1,0 +1,59 @@
+\q{10}{Python Expressions} 
+
+For each of the Python expressions in the table below, write the output when the expression is evaluated. If an error occurs, write “Error”. The first row provides an example. 
+
+\vskip .1in
+
+{\bf Example Expression:} \lsi+make_array(1,2,3,4,5) == 3+
+
+\vskip .1in
+
+{\bf Example Answer:} \lsi+array([False, False, True, False, False])+
+
+\begin{enumerate}
+
+\subq{2} \lsi+make_array(1,1) * np.arange(1,10,5)+
+
+\vskip .5in
+
+\solution{\lsi+array([1,6])+
+
+Be lenient in grading the way arrays are written out; for example, accept \lsi+[1,6]+ as correct.}
+
+
+\subq{2} \lsi+make_array(3,4,8) ++\lsi+ np.arange(2,7,1)+
+
+\vskip .5in
+
+\solution{\lsi+Error+}
+
+
+\subq{2} \lsi+np.average(np.arange(1,10,4))+
+
+\vskip .5in
+
+\solution{\lsi+5.0+ (also accept 5)}
+
+
+\subq{2} \lsi+make_array(1,2,3,4) ++\lsi+ 2+
+
+\vskip .5in
+
+\solution{\lsi+array([3,4,5,6])+}
+
+
+\subq{2} \lsi+"I love Data " ++\lsi+ 8+
+
+\vskip .5in
+
+\solution{\lsi+Error+}
+
+
+% \subq{3} \lsi+" ".join(make_array("I", "love", "Data8"))+
+
+% \vskip .5in
+
+% \solution{\lsi+'I love Data8'+}
+
+
+\end{enumerate}

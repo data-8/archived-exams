@@ -1,0 +1,62 @@
+\q{6}{What Would Python Do?}
+\vskip .2 in
+For parts \textbf{a} and \textbf{b}, choose the bubble corresponding to what Python would output after the expression is evaluated. If the expression would cause an error, select \lsi+Error+.
+
+\begin{enumerate}
+\subq{1}      \lsi{make_array(9, 8, 7) + 3}
+    \vskip .1 in
+    \bubble \quad \lsi +Error+
+    
+    \bubble \quad \lsi +np.array([9,8,7,3])+
+    
+    \solutionbubble \quad \lsi +np.array([12,11,10])+
+    
+    \bubble \quad \lsi +np.array([9,9,9,8,8,8,7,7,7])+
+
+\vskip .2in
+\subq{1}      \lsi{make_array(1, 3, 4) + np.arange(0, 4, 2)}
+    \vskip .1 in
+    \solutionbubble \quad \lsi +Error+
+    
+    \bubble \quad \lsi +np.array([1,7,6])+
+    
+    \bubble \quad \lsi +np.array([1,5,8])+
+    
+    \bubble \quad \lsi +np.array([1,3,0,3,4,2])+
+
+\vskip .2in    
+\subq{2}  \vskip 0.1in  What is the value of \lsi+z+ after the four following lines of code have been run? \newline
+\lsi{x = make_array(0, 3, 4, 2, 1)}
+\newline
+  \lsi{y = x > 2}\newline
+  \lsi{z = np.count_nonzero(y)}\newline
+    \lsi{z}
+    \vskip .1 in
+    \bubble \quad The code causes an \lsi+Error+
+    
+    \solutionbubble \quad \lsi+2+
+    
+    \bubble \quad \lsi+3+
+    
+    \bubble \quad \lsi+False+
+\vskip 0.2 in
+\subq{2} You are keeping track of every new TV show you binge watch in an array. You have already seen \textit{Friends} and \textit{How I Met Your Mother}, so in your jupyter notebook you have:
+\vskip 0.1 in
+\lsi+tv_shows = make_array("Friends","How I Met Your Mother")+
+\vskip 0.1 in
+Suppose you just finished watching \textit{The Office} and want to add it to your \lsi+tv_shows+ array, so you type:
+\vskip 0.1in
+\lsi+np.append(tv_shows, "The Office")+
+\vskip 0.1 in
+After typing and running the code exactly as above, what would the array \lsi+tv_shows+ contain? Write the contents of the array on the following blank: \\
+\vskip 0.1 in
+\solutionimage
+{
+\bklong
+}
+{
+\lsi+np.array(["Friends", "How I Met Your Mother"])+
+}
+
+
+\end{enumerate}

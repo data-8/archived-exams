@@ -1,0 +1,149 @@
+\documentclass[twoside]{article}
+\usepackage{exam}
+\usepackage{enumitem}
+\usepackage{verbatim}
+
+
+
+\graphicspath{
+    {figures/}
+}
+
+\pagestyle{myheadings}
+\markboth{}{{\large Name: }\sp{4in}}
+\nonstopmode
+
+% For Python code
+\lstset{%
+  language=Python,
+  basicstyle=\ttfamily,
+  showstringspaces=false
+  keywordstyle=\color{black},
+  commentstyle=\color{black},
+  stringstyle=\color{black},
+}
+
+\def\semester{Summer 2019}
+
+\newcommand{\bubble}{\raisebox{-0.3ex}{\includegraphics[height=2ex]{oval.png}}}
+\newcommand{\checkbox}{\raisebox{-0.3ex}{\includegraphics[height=2ex]{square.png}}{\hskip 0.05in}}
+\newcommand{\filledbubble}{\raisebox{-0.3ex}{\includegraphics[height=2ex]{oval-filled.png}}}
+\newcommand{\filledsquare}{\raisebox{-0.3ex}{\includegraphics[height=2ex]{square-filled.png}}}
+\newcommand{\lsi}{\lstinline}
+\newcommand{\bkshort}{\underline{\qquad\qquad\qquad}\lsi}
+\newcommand{\bk}{\underline{\qquad\qquad\qquad\qquad\qquad}\lsi}
+\newcommand{\bkmed}{\underline{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}\lsi}
+\newcommand{\bklong}{\hrulefill}
+\newcommand{\nlvs}{\newline\vskip 0.1in}
+
+% Uncomment next line to generate pdf with solutions
+% \newcommand{\issolution}{}
+
+%%% Showing solutions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifdef{\issolution}{%
+    \newcommand{\solution}[1]{{\color{red}#1}}
+    \newcommand{\solutioncircle}[1]{{\color{red}#1}}
+    \newcommand{\solutionbubble}[0]{\filledbubble}
+    \newcommand{\solutionbox}[0]{\filledsquare}
+    \newcommand{\solutionimage}[2]{{\color{red}#2}}  % First arg is question, second is solution
+    \newcommand{\versioned}[2]{{\color{red}#2}} % First arg is question, second is solution
+}{%
+    \newcommand\solution[1]{} % excludes
+    \newcommand{\solutioncircle}[1]{#1} % don't color text but still display it
+    \newcommand{\solutionbubble}[0]{\bubble}
+    \newcommand{\solutionbox}[0]{\checkbox}
+    \newcommand{\solutionimage}[2]{#1} % First arg is question, second is solution
+    \newcommand{\versioned}[2]{#1} % First arg is question, second is solution
+}
+
+\newcommand{\TBD}{{\color{red}{ TBD }}}
+
+%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\sc Final Exam \solution{Solutions}}
+
+\begin{document}
+\thispagestyle{empty}
+\maketitle
+
+\textbf{INSTRUCTIONS}
+
+{\small
+\begin{itemize}
+%FIXME
+\item The exam is worth 140 points. You have 170 minutes to complete it.
+
+\item The exam is closed book, closed notes, closed computer/phone/tablet, closed calculator,
+except the official midterm exam reference guide provided with the exam.
+
+\item Write/mark your answers on the exam in the blanks/bubbles  provided. Throughout this exam, we will give you checkboxes (\checkbox) for "select all that apply" questions and bubbles (\bubble) for questions with a single answer. Answers written anywhere else will not be graded. Unless the question specifically asks you to explain your answer, you do not need to do so, and if you write an explanation it will not be graded. 
+
+\item If you need scratch paper, you are welcome to use the reference guide and the back of this cover page. Scratch work will not be graded.
+
+\item For all Python code, you may assume that the statements \lstinline+from datascience import *+ and
+\lstinline+import numpy as np+ have been executed.
+Do not use features of the Python language that have not been described in this course.
+
+\item In any part, you are free to use any tables, arrays, or functions that have been defined in previous parts of the same question, and you may assume they have been defined correctly.
+\end{itemize}
+}
+
+\vskip .1in
+
+\begin{center}
+\begin{tabular}{|m{5.5cm}|m{8cm}|}
+\hline
+Last name & \\ [1cm]
+\hline
+First name & \\ [1cm]
+\hline
+Student ID number & \\ [1cm]
+\hline
+Calcentral email (\nolinkurl{\_@berkeley.edu}) & \\ [1cm]
+\hline
+Name of Lab GSI & \\ [1cm]
+\hline
+Your seat number (e.g. A1) \& room & \\ [1cm]
+\hline
+{\Large $\leftarrow$} Name of the person to your left & \\ [1cm]
+\hline
+Name of the person to your right {\Large $\rightarrow$} & \\ [1cm]
+\hline
+\emph{All the work on this exam is my own.} \textbf{(please sign)} & \\ [1cm]
+\hline
+\end{tabular}
+\end{center}
+
+\clearpage
+\textbf{This page is intentionally left blank. You can use it for scratch work but it will not be graded.}
+~\newpage
+
+\begin{enumerate}
+    \input{questions/wwpd}
+    \clearpage
+      \input{questions/shot}
+      \clearpage
+      \input{questions/boba.tex}
+      \clearpage
+      \input{questions/chicken.tex}
+      \clearpage
+      \input{questions/civic_distributions.tex}
+      \clearpage
+      \input{questions/participation_reg.tex}
+      \vskip 0.4in
+      \input{questions/potpourri_reg.tex}
+      \clearpage
+      \input{questions/rocks.tex}
+      \clearpage
+      \input{questions/falafel.tex}
+      \vskip 0.8in
+     \q{0}{Data art (optional)}
+     Draw a visualization or graph describing your experience in Data 8.
+     \vfill
+      \q{0}
+      {}Write your name in the space provided on one side of every page of the exam.
+     You're done!
+\end{enumerate}
+
+\end{document}
+
