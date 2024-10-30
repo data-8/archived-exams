@@ -1,0 +1,97 @@
+%!TEX root = ../final.tex
+\question A jar contains 100 jelly beans of four different colors - orange,
+green, blue, and purple - in equal amounts. \textbf{In this question, if you
+select the Other choice, you must state the correct expression in the space
+provided.}
+
+\begin{parts}
+  \part[2] Suppose Sam only likes green jelly beans. He picks five beans at
+  random without replacement from the jar. What is the chance he gets all green
+  beans?
+
+  \begin{multicols}{2}
+  \begin{checkboxes}
+    \correctchoice $ \frac{25}{100} \cdot \frac{24}{99} \cdot \frac{23}{98}
+      \cdot \frac{22}{97} \cdot \frac{21}{96} $
+    \choice $ \left( \frac{25}{100} \right)^5 $
+    \choice $ \frac{25}{100} \cdot \frac{24}{100} \cdot \frac{23}{100} \cdot
+      \frac{22}{100} \cdot \frac{21}{100} $
+    \choice Other
+  \end{checkboxes}
+  \columnbreak
+  If Other selected, write correct expression:
+  \end{multicols}
+
+  \part[3] Suppose he replaces the five previous beans and picks another five,
+  this time with replacement. What is the chance he gets at least one green
+  bean?
+
+  \begin{multicols}{2}
+  \begin{checkboxes}
+    \choice $ 1 - \left( \frac{25}{100} \right)^5 $
+    \choice $ 1 - \frac{25}{100} \cdot \frac{24}{100} \cdot \frac{23}{100}
+      \cdot \frac{22}{100} \cdot \frac{21}{100} $
+    \correctchoice $ 1 - \left(\frac{75}{100} \right)^5 $
+    \choice Other
+  \end{checkboxes}
+  \columnbreak
+  If Other selected, write correct expression:
+  \end{multicols}
+
+  \part[3] If Sam puts the beans back in the jar and then draws four beans
+  without replacement, what is the chance that all four beans are different
+  colors?
+
+  \begin{multicols}{2}
+  \begin{checkboxes}
+    \choice $ \frac{25}{100} \cdot \frac{24}{99} \cdot \frac{23}{98} \cdot
+      \frac{22}{97} $
+    \choice $ 1 - \frac{25}{100} \cdot \frac{24}{99} \cdot \frac{23}{98} \cdot
+      \frac{22}{97} $
+    \choice $ \frac{25}{100} \cdot \frac{25}{99} \cdot \frac{25}{98} \cdot
+      \frac{25}{97} $
+    \correctchoice Other
+  \end{checkboxes}
+  \columnbreak
+  If Other selected, write correct expression:
+  \end{multicols}
+
+  \begin{solution}
+
+  \[ \frac{100}{100} \cdot \frac{75}{99} \cdot
+     \frac{50}{98} \cdot \frac{25}{97} \]
+
+  \end{solution}
+
+  \part[4] Sam receives a gift jar of 400 jellybeans that has 50 orange, 50
+  green, 150 blue, and 150 purple jellybeans. He's confused because he thinks
+  the jar should have around the same proportion of each color, so he runs a
+  hypothesis test.
+
+  Null hypothesis: Each jellybean color has equal probability of
+  appearing.
+
+  Alternative: The jellybean colors appear with some other distribution.
+
+  He selects the total variation distance as his test statistic.
+
+  \begin{multicols}{2}
+    Draw a rough sketch of the empirical distribution of the test statistic
+    under the null hypothesis. You must:
+
+    \begin{enumerate}
+      \item Include the origin (0, 0) in your plot.
+      \item Mark the observed value of the test statistic as a vertical line.
+      \item Shade in the area corresponding to the P-value.
+    \end{enumerate}
+
+    Don't worry about x/y labels or whether you shaded in exactly the right
+    amount of area.
+
+    \columnbreak
+
+    \begin{solutionorbox}[2in]
+      TODO(sam): Add plot.
+    \end{solutionorbox}
+  \end{multicols}
+\end{parts}

@@ -1,0 +1,86 @@
+%!TEX root = ../final.tex
+\question Arvind is testing the effectiveness of a drug, Oskirol, on patients
+who suffer from the worldwide Tree Syndrome epidemic. He randomly selects 50
+patients from the Junior University Hospital, then randomly assigns half of the
+patients to a treatment group and half to control. He gives the treatment group
+the drug and doesn't do anything to the control group.
+
+Afterward, Arvind calculates an overall wellness score from 0 to 100 for all
+patients. He creates a 95\% bootstrap confidence interval for the difference in
+the mean wellness scores between treatment and control groups: [11.1,
+18.4].
+
+Sam has some complaints about Arvind's methods. Evaluate whether Sam is right
+in each scenario and justify your answer.
+
+\begin{parts}
+  \part[3] Sam states that since Arvind only selected patients from the Junior
+  University Hospital, Arvind cannot infer any effect his treatment has
+  on \textbf{all} patients with Tree Syndrome.
+
+  \begin{oneparcheckboxes}
+    \correctchoice Sam is correct
+    \choice Sam is incorrect
+  \end{oneparcheckboxes}
+
+  \begin{solutionorbox}[0.9in]
+    Sam is correct. If Arvind only drew patients from the Junior University
+    Hospital, with no other information he can only infer the effect his
+    treatment has on patients with Tree Syndrome at that hospital.
+  \end{solutionorbox}
+
+  \part[3] Sam finds out that the true probability distribution of wellness
+  scores is highly skewed left. Because of this, he states that the bootstrap
+  is an \textbf{inappropriate method} to use.
+
+  \begin{oneparcheckboxes}
+    \choice Sam is correct
+    \correctchoice Sam is incorrect
+  \end{oneparcheckboxes}
+
+  \begin{solutionorbox}[0.9in]
+    Sam is incorrect. According to the Central Limit Theorem, the distribution
+    of the mean wellness scores is normally distributed even though the actual
+    distribution of scores is not, so the conditions for bootstrapping are
+    still met.
+  \end{solutionorbox}
+
+  \part[3] Arvind notices that 0 is not in the confidence interval, so he
+  concludes that is it likely his drug \textbf{caused} his patients' wellness
+  scores to increase. Sam points out that Arvind's conclusion is incorrect:
+  this hypothesis test can only be used to establish association, not
+  causation.
+
+  \begin{oneparcheckboxes}
+    \choice Sam is correct
+    \correctchoice Sam is incorrect
+  \end{oneparcheckboxes}
+
+  \begin{solutionorbox}[0.9in]
+    Sam is incorrect. Because this experiment was a randomized control
+    experiment, if we reject the null we can establish causality.
+
+    Note that Arvind can conclude that his drug likely caused wellness scores
+    to increase compared to patients who didn't take anything at all. He can't
+    say anything about the effectiveness of his drug compared to a placebo
+    which means this experiment needs adjusting for actual medical purposes.
+  \end{solutionorbox}
+
+  \part[3] Sam points out that Arvind didn't give a placebo to the
+  control group, so the control group's wellness scores were not as high as
+  they would be with a placebo. Sam argues that Arvind's confidence interval
+  endpoints are likely \textbf{lower} than they would be with the placebo.
+
+  \begin{oneparcheckboxes}
+    \choice Sam is correct
+    \correctchoice Sam is incorrect
+  \end{oneparcheckboxes}
+
+  \begin{solutionorbox}[0.9in]
+    Sam is incorrect. Since we expect a placebo to increase the wellness scores
+    of the control group, Arvind's confidence interval endpoints are likely
+    higher that the one he would have created if he gave a placebo to the
+    control group.
+  \end{solutionorbox}
+
+\end{parts}

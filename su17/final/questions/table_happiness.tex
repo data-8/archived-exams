@@ -1,0 +1,111 @@
+%!TEX root = ../final.tex
+\question The \code{happy} table from Gallup World Poll data describes the
+happiness score ratings of 157 countries. It contains the number of people (in
+thousands) that gave each happiness rating (0 is worst, 10 is best) for each
+country.
+
+\begin{verbatim}
+Country | Rating | Count
+Denmark | 0      | 3.4
+Denmark | 1      | 4.5
+...     | ...    | ...
+Denmark | 10     | 16.9
+Iceland | 0      | 2.1
+Iceland | 1      | 4.1
+... (1510 rows omitted)
+\end{verbatim}
+
+Complete the Python expressions below to compute each result. The last line of
+each answer should evaluate to the result requested. \textbf{You may not use
+more lines than the ones provided.}
+
+\begin{parts}
+
+\part[2] The total number of people surveyed in the data, in thousands.
+
+\begin{verbatim}
+np.sum(_________________________________________________________)
+\end{verbatim}
+
+\begin{solution}
+\begin{verbatim}
+  np.sum(happy.column('Count'))
+\end{verbatim}
+\end{solution}
+
+\part[3] A table containing the same columns as \code{happy} with the countries
+in descending order by the number of people in that country who gave a rating
+of 10. (All ratings in the table are integers.)
+
+\begin{verbatim}
+happy.__________________________________________________________
+\end{verbatim}
+
+\begin{solution}
+\begin{verbatim}
+happy.where('Rating', 10).sort('Count', descending=True)
+\end{verbatim}
+\end{solution}
+
+\part[3] A table containing two columns: the countries and the total amount of
+people surveyed for each country in thousands.
+\begin{verbatim}
+happy._________________________________________________________
+\end{verbatim}
+
+\begin{solution}
+\begin{verbatim}
+happy.drop('Rating').group('Country', np.sum)
+\end{verbatim}
+\end{solution}
+
+\part[3] The average happiness rating of Denmark. (The answer is not simply 5.
+Remember to account for the rating counts.)
+\begin{verbatim}
+d = ____________________________________________________________
+
+sum(________________ * __________________) / sum(______________)
+\end{verbatim}
+
+\begin{solution}
+\begin{verbatim}
+d = happy.where('Country', 'Denmark')
+sum(d.column(1) * d.column(2)) / sum(d.column(2))
+\end{verbatim}
+\end{solution}
+
+\part[6] A table containing the average happiness rating for each country.
+Assume you have a table called \code{totals} that contains the total
+people surveyed for each country:
+
+\begin{verbatim}
+Country | Total
+Denmark | 41.4
+Iceland | 38.9
+... (155 rows omitted)
+\end{verbatim}
+
+\begin{verbatim}
+def helper(row):
+    total = totals.____________________________________________
+
+    return _________________ * ________________ / _____________
+
+(happy.with_column('score', ___________________________________)
+      .select('Country', 'score')
+      .group('Country', np.sum))
+\end{verbatim}
+
+\begin{solution}
+\begin{verbatim}
+def helper(row):
+    total = totals.where('Country', row.item(0)).column(1).item(0)
+    return row.item(1) * row.item(2) / total
+
+(happy.with_column('score', happy.apply(helper))
+      .select('Country', 'score')
+      .group('Country', np.sum))
+\end{verbatim}
+\end{solution}
+
+\end{parts}

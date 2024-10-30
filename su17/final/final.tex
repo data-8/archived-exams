@@ -1,0 +1,170 @@
+% Reference: http://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/exam/examdoc.pdf
+% https://www.sharelatex.com/learn/Typing_exams_in_LaTeX
+
+% To create exam without answers, remove the answers arg from the command below
+\documentclass[answers, addpoints, 12pt]{exam}
+% \documentclass[addpoints, 12pt]{exam}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=.75in]{geometry}
+
+\usepackage{times}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{fancyvrb}
+\usepackage{floatrow}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+
+% Table float box with bottom caption, box width adjusted to content
+\newfloatcommand{capbtabbox}{table}[][0.6\FBwidth]
+
+\CorrectChoiceEmphasis{\color{red}}
+
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\setlength{\columnsep}{.5cm}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+
+% If you need an image, stick it in the ./figs folder
+\graphicspath{{./figs/}}
+
+% Use \code{stuff} to make 'stuff' appear as code. Only useful for short
+% amounts of code.
+\newcommand{\code}[1]{\texttt{#1}}
+
+\pointpoints{Pt}{Pts}
+
+\title{Data 8 Final \color{red}{Solutions}}
+% \title{Data 8 Final}
+\author{Summer 2017}
+\date{}
+
+\newcommand{\class}{Data 8}
+\newcommand{\term}{Summer 2017}
+\newcommand{\examnum}{\color{red}{Final Solutions} }
+% \newcommand{\examnum}{Final}
+\newcommand{\examdate}{8/11/2017}
+\newcommand{\timelimit}{170 Minutes}
+
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+
+\begin{document}
+
+\maketitle
+
+\makebox[\textwidth]{First Name:\enspace\hrulefill}
+\vspace{0.1cm}
+
+\makebox[\textwidth]{Last Name:\enspace\hrulefill}
+\vspace{0.1cm}
+
+\makebox[\textwidth]{Email:\enspace\hrulefill \code{@berkeley.edu}}
+\vspace{0.1cm}
+
+\makebox[\textwidth]{Student ID:\enspace\hrulefill}
+\vspace{0.1cm}
+
+\makebox[\textwidth]{GSI:\enspace\hrulefill}
+\vspace{0.1cm}
+
+\makebox[\textwidth]{Name of person to your left:\enspace\hrulefill}
+\vspace{0.1cm}
+
+\makebox[\textwidth]{Name of person to your right:\enspace\hrulefill}
+\vspace{0.1cm}
+
+\makebox[\textwidth]{\emph{All the work on this exam is my own.}
+\textbf{(please sign)}: \enspace\hrulefill}
+\vspace{0.1cm}
+
+\begin{center}
+\fbox{\fbox{
+\parbox{6in}{
+{\Large \textbf{Instructions:}}
+\begin{itemize}
+\item This exam contains \numpages\ pages (including this cover page) and
+  \numquestions\ questions.
+\item This exam must be completed in the given \textbf{2 hour, 50 minute} time
+period.
+\item You may use two handwritten (two-sided) cheat sheets and the two official
+  study guides provided with this exam.
+\item Work quickly through each question. There are a total of \numpoints\
+  points on this exam.
+\end{itemize}
+}
+}}
+\end{center}
+
+\newpage
+
+\begin{center}
+\vspace*{\stretch{1}}
+This page is intentionally left blank, but feel free to use it as scratch
+paper.
+\vspace*{\stretch{1}}
+\end{center}
+
+\newpage
+
+\begin{questions}
+
+\input{questions/table_happiness}
+
+\newpage
+
+\input{questions/distributions_fuel}
+
+\newpage
+
+\input{questions/hyp_jellybeans}
+
+\newpage
+
+\input{questions/ci_seal}
+
+\newpage
+
+\input{questions/classification_gpa}
+
+\newpage
+
+\input{questions/regression_food}
+
+\newpage
+
+\input{questions/ab_oskirol}
+
+\end{questions}
+
+\newpage
+
+\begin{center}
+\vspace*{\stretch{1}}
+This page is intentionally left blank, but feel free to use it as scratch
+paper.
+\vspace*{\stretch{1}}
+\end{center}
+
+\newpage
+
+\end{document}

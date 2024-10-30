@@ -1,0 +1,163 @@
+%!TEX root = ../final.tex
+\question The \code{food} table contains the latitude and longitude of
+restaurants in SF and their food safety rating (0 to 100, higher is better).
+
+\begin{verbatim}
+lat       | long        | score
+37.791116 | -122.403816 | 98
+37.786848 | -122.421547 | 100
+37.792888 | -122.403135 | 70
+... (6723 rows omitted)
+\end{verbatim}
+
+\begin{parts}
+
+\part Sam tried to do some data analysis but didn't get very far. Here are some
+variables he defined and how he defined them. The functions
+\code{slope(table, x\_label, y\_label)} returns the slope in original units of
+the regression line predicting y given x and \code{correlation(table, x\_label,
+y\_label)} returns the correlation coefficient $r$ between the variables x and
+y.
+
+Write one line of Python code to compute each of the following.
+\textbf{In your code, you may only use arithmetic operators, numbers, and the
+variables that Sam defined below.}
+
+\begin{verbatim}
+name | code
+a1   | slope(food, 'lat', 'score')
+corr | correlation(food, 'lat', 'score')
+m1   | np.mean(food.column('lat'))
+m2   | np.mean(food.column('score'))
+\end{verbatim}
+
+\begin{subparts}
+  \subpart[2] The correlation between score and latitude.
+
+  \begin{verbatim}
+
+____________________________________________________________
+  \end{verbatim}
+
+  \begin{solution}
+  \begin{verbatim}
+corr
+  \end{verbatim}
+  \end{solution}
+
+  \subpart[3] The prediction for the score given a latitude of 750.
+
+    \begin{verbatim}
+
+____________________________________________________________
+    \end{verbatim}
+
+    \begin{solution}
+    \begin{verbatim}
+a1 * 750 + m2 - a1 * m1
+    \end{verbatim}
+    \end{solution}
+
+  \subpart[3] The prediction for the latitude given a score of 0. (You don't
+  need the next part of this question to solve this one.)
+
+    \begin{verbatim}
+
+____________________________________________________________
+    \end{verbatim}
+
+    \begin{solution}
+    \begin{verbatim}
+m1 - corr * corr / a1 * m2
+    \end{verbatim}
+    This question was taken out of the exam because you actually did, in fact,
+    need part iv to solve this question.
+    \end{solution}
+
+  \subpart[3] The slope of the regression line predicting latitude given the
+    score in original units.
+
+    \begin{verbatim}
+
+____________________________________________________________
+    \end{verbatim}
+
+    \begin{solution}
+    \begin{verbatim}
+corr * corr / a1
+    \end{verbatim}
+    \end{solution}
+\end{subparts}
+
+\newpage
+
+\part[5] The \code{food} table is repeated here for your convenience.
+
+\begin{verbatim}
+lat       | long        | score
+37.791116 | -122.403816 | 98
+37.786848 | -122.421547 | 100
+37.792888 | -122.403135 | 70
+... (6723 rows omitted)
+\end{verbatim}
+
+Recall that the regression line is the line that minimizes the mean squared
+error between the predictions and the actual values. For example, to find the
+regression line that uses latitude to predict score we want to choose the slope
+and intercept for the line:
+
+\[ \text{predicted score} = slope \cdot lat + intercept \]
+
+So that $ mean((\text{actual score} - \text{predicted score})^2) $ is as small
+as possible.
+
+We can use the \code{minimize} function to find this slope and intercept for
+us. In particular, in lecture we defined a function
+\code{mse(slope, intercept)} that returns the mean squared error given a
+choice of slope and intercept. Then, \code{minimize(mse)} returned the slope
+and intercept of the regression line.
+
+What if we wanted to use both latitude and longitude to make a prediction? We
+can do this by minimizing the mean squared error between the prediction line
+
+\[ \text{predicted score} = slope_1 \cdot lat +
+   slope_2 \cdot long + intercept \]
+
+And the actual score. This is
+also known by the term \emph{multiple linear regression}.
+
+Fill in the the blanks for \code{multiple\_mse} so that
+\code{minimize(multiple\_mse)} will return the three parameters for linear
+regression using both latitude and longitude to predict score.
+
+\begin{verbatim}
+
+def multiple_mse(______________________________________________):
+
+    lat = ______________________________________________________
+
+    long = _____________________________________________________
+
+    score = ____________________________________________________
+
+    return np.mean(
+
+    ____________________________________________________________
+    )
+
+\end{verbatim}
+
+\begin{solution}
+\begin{verbatim}
+def multiple_mse(slope1, slope2, intercept):
+    lat = food.column('lat')
+    long = food.column('long')
+    score = food.column('score')
+
+    return np.mean(
+      (score - slope1 * lat - slope2 * long - intercept) ** 2
+    )
+\end{verbatim}
+\end{solution}
+
+\end{parts}
