@@ -1,0 +1,112 @@
+\documentclass[twoside]{article}
+\usepackage{exam}
+\usepackage{multicol}
+\usepackage[export]{adjustbox}
+
+\pagestyle{myheadings}
+\markboth{}{{\large Name: }\sp{4in}}
+\nonstopmode
+
+% For Python code
+\lstset{%
+  language=Python,
+  basicstyle=\ttfamily,
+  showstringspaces=false
+  keywordstyle=\color{black},
+  commentstyle=\color{black},
+  stringstyle=\color{black},
+}
+
+\newcommand{\bubble}{\raisebox{-0.3ex}{\includegraphics[height=2ex]{oval.png}}}
+\newcommand{\filledbubble}{\raisebox{-0.3ex}{\includegraphics[height=2ex]{oval-filled.png}}}
+
+%%% Showing solutions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \newcommand{\solution}[1]{{\color{red}#1}}
+\newcommand\solution[1]{} % excludes
+
+\newcommand{\solutioncircle}[1]{{\color{red}#1}}
+% \newcommand{\solutioncircle}[1]{#1} % don't color text but still display it
+
+\newcommand{\solutionimage}[2]{#2}  % First arg is question, second is solution
+% \newcommand{\solutionimage}[2]{#1} % First arg is question, second is solution
+
+\newcommand{\versioned}[2]{#1} % First arg is question, second is solution
+% \newcommand{\versioned}[2]{#2} % First arg is question, second is solution
+
+%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\sc Final \solution{Solutions}}
+
+\begin{document}
+\thispagestyle{empty}
+\maketitle
+
+\medskip
+
+\textbf{INSTRUCTIONS}
+
+\begin{itemize}
+\item You have 2 hours and 50 minutes to complete the exam.
+
+\item The exam is closed book, closed notes, closed computer, closed calculator,
+except for the official reference guide provided with the exam.
+
+\item Mark your answers \textbf{on the exam itself}. We will \emph{not} grade
+answers written on scratch paper.
+
+\item You may leave numerical calculations unsimplified throughout the exam.
+
+\item You may assume that the statements {\tt import numpy as np} and {\tt from datascience import *} have been executed throughout the exam.
+
+\item No questions will be allowed during the time of the final. If something is unclear, you may state an assumption. If the assumption is valid, we will grade based on your assumption. 
+\end{itemize}
+\textbf{Question 0 (1 point)} Write your name in the space provided on one side of every page of the exam. 
+\medskip
+
+\begin{center}
+\begin{tabular}{|m{6cm}|m{8cm}|}
+\hline
+Last name & \\ [1cm]
+\hline
+First name & \\ [1cm]
+\hline
+Email & \\ [1cm]
+\hline
+Name of the person to your left & \\ [1cm]
+\hline
+Name of the person to your right & \\ [1cm]
+\hline
+\emph{All the work on this exam is my own.} \textbf{(please sign)} & \\ [1cm]
+\hline
+\end{tabular}
+\end{center}
+\vfill
+\vfill
+\newpage
+% \center{This page was intentionally left blank.}
+% \newpage
+
+\begin{enumerate}
+    \input{tables}
+    \input{spotify}
+    \input{means}
+    \input{phist}
+    \newpage
+    \input{regression}
+    \newpage
+    \input{happiness}
+    \input{experiments}
+    \input{functions}
+    \newpage
+    \input{minimize}
+    \input{confidence}
+    \input{classification}
+    \newpage
+    \input{picture}
+
+
+\end{enumerate}
+
+\end{document}

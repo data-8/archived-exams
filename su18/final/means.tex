@@ -1,0 +1,13 @@
+\q{8}{You're Samply Too Mean} 
+
+The average weights of all people in California is 146 lb. Through some experimentation, we note that the probability of seeing a sample of 100 people (with replacement) in California whose average weight is higher than 151 lb is 2.5\%. 
+\begin{enumerate}
+\subq{4} Solve for the standard deviation of all weights in California. Show your work and box your final answer, which may be left unsimplified. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+\solution{If we have a 2.5\% chance of seeing an average sample weight higher than 146 lb, we know that is two standard deviations above the sample average distributions average (which is the population average weight), by the CLT. The SD of the sample means is PopSD / sqrt(Sample Size). In this case, we get that 2 * PopSD / 10 = 5. The PopSD is then 25. }
+\subq{4} We would like to reduce the chance of seeing an average weight of a sample (drawn with replacement) that is higher than 151 lb to roughly .15\%. Solve for the smallest sample size which would achieve this goal. Show your work and box your final answer, which may be left unsimplified. Assume your answer to Part A is assigned to the variable $PopSD$ and use this variable in your final expression, if needed. \\ \\ \\ \\ \\ \\ \\
+\solution{For 151 and above to represent .15\% of the data, that means 151 is 3 SDs above the sample mean (146). So, we want 5 to be 3 SDs of the sample mean. So, 3 * PopSD / sqrt(SampSize) = 5. Solving for Sample Size, we get $(3/5 * PopSD)^2$}
+\newpage
+\end{enumerate}
+
+
+

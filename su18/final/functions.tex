@@ -1,0 +1,35 @@
+\q{8}{P-Value Puzzle}
+
+
+Define the function {\tt p\_value\_calculation}, which takes in the following 3 arguments: 
+
+\begin{itemize}
+\item {\tt sim\_vals} is an array of simulated test statistics under a specific null hypothesis.
+\item {\tt observed\_ts} is the value of a test statistic from a specific observed sample.
+\item {\tt larger\_alt} is a boolean which is either {\tt True} if only large values of the test statistic above point towards the alternative, and {\tt False} otherwise (small values of the test statistic point towards the alternative).
+\end{itemize} 
+The function should calculate the P-Value of the {\tt observed\_ts} (observed statistic), with respect to the null hypothesis under which {\tt sim\_vals} was simulated. You may not need all of the lines. 
+\\ \\
+\lstinline{def p_value_calculation(sim_vals, observed_ts, larger_alt):} \\
+
+
+\lstinline{	_______________________________________________________________________________} \\ \\
+
+
+\lstinline{	_______________________________________________________________________________} \\ \\
+
+
+\lstinline{	_______________________________________________________________________________}\\ \\
+
+\lstinline{        ________________________________________________________________________________} \\ \\
+
+
+\solution{
+\lstinline{def p_value_calculation(sim_vals, observed_ts, larger_alt):} \\
+\lstinline{	if larger_alt:} \\ \\
+\lstinline{	    return sum(sim_vals >= observed_ts) / len(sim_vals)} \\ \\
+\lstinline{	else:}\\ \\
+\lstinline{     return sum(sim_vals <= observed_ts) / len(sim_vals)}\
+}
+
+

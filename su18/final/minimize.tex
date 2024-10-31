@@ -1,0 +1,42 @@
+\q{6}{Minimize That!} 
+
+\begin{enumerate}
+\subq{2} Assume we have a table, {\tt tbl}, which has two columns. We also have a function which takes in two numbers that represent column indices, and returns the \textbf{negative of the correlation} between the two columns specified by the indices in {\tt tbl}. The first number passed in to the function is the column index for x, and the second number passed in is the column index for y. \\
+Assume the correlation between the two columns in {\tt tbl} is .7. If multiple arguments minimize a function, {\tt minimize} randomly chooses one. Which of the following could be the result of calling {\tt minimize} on our function above?
+\begin{itemize}[label=\bubble]
+\item {\tt array([0,1])}
+\item {\tt array([1,0])}
+\item Both of the above.
+\item None of the above.
+\item Cannot tell with this information.
+\end{itemize}
+\solution{Option 4 -- array([0,0]), and array([1,1]) would have resulted in a correlation of 1, which results in the function returning -1. Since the function returns negative of correlation, this is the smallest value possible.}
+\\ \\
+\subq{4} We are interested in using {\tt minimize} to find the column with the smallest element in a table {\tt tbl2}. Assume {\tt tbl2} only contains numbers. Define a function {\tt minimized\_fn} which, when passed in to minimize, gives the column index (number) of the column which contains the smallest element in the table. You may not need all of the lines provided below. Afterwards, use your new function to assign {\tt smallest} to the smallest entry in {\tt tbl2}. \\
+
+\lstinline{def minimized_fn(_____________________________________):} \\
+
+
+\lstinline{	_______________________________________________________________________________} \\ \\
+
+
+\lstinline{	_______________________________________________________________________________} \\ \\
+
+
+\lstinline{smallest = ___________________________________________________________________________} \\ \\
+
+
+\solution{
+\lstinline{def minimized_fn(index)} \\
+
+
+\lstinline{	return min(tbl2.column(index))} \\ \\
+
+\lstinline{smallest = min(tbl2.column(minimize(minimized_fn)))} \\ \\
+
+Minimize expects a function, and returns the arguments of the function which minimize it. The arguments to the function must be numerical. Taking in a table wouldn't make sense. }
+
+\end{enumerate}
+
+
+

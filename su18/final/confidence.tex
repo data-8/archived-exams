@@ -1,0 +1,66 @@
+\q{16}{Confidence in Crime}
+
+In 1968, the United States Census Bureau took a large random sample of metropolitan areas and measured their crime rates, measured in proportion per 100,000. The information is encapsulated in a one column table called {\tt crimes}.
+
+\begin{enumerate}
+
+\subq{2} Which of the following pieces of information can we determine given the sample? \textbf{Mark all that apply}.
+\begin{itemize}[label=\bubble]
+\item The average crime rate in all metropolitan areas in the US in 1968.
+\item The approximate distribution of crime rates in metropolitan areas in the US in 1968.
+\item The range of crime rates in all metropolitan areas in the US in 1968.
+\item None of the above
+\end{itemize}  \\
+\solution{Option 2}
+
+Assume we bootstrap our sample many times to get an approximate 90\% confidence interval for the average crime rate of the population. The resulting interval is (0.0256, 0.0287).\\
+
+\subq{2} What is the probability that the true average crime rate in the population lies in this interval?
+\begin{itemize}[label=\bubble]
+\item 100\%
+\item 0\%
+\item 90\%
+\item 95\%
+\item None of the above\\
+\end{itemize}  
+\solution{Option 5, or writing both 100\% or 0\%}
+
+\subq{2} True or False: Approximately 90\% of the population crime rates lie between .0256 and .0286. 
+\begin{itemize}[label=\bubble]
+\item True
+\item False\\
+\end{itemize}  
+\solution{Option 2 -- Only looking at averages.}
+
+\subq{2} True or False:  Approximately 90\% of the sample crime rates lie between .0256 and .0286. 
+\begin{itemize}[label=\bubble]
+\item True
+\item False\\
+\end{itemize}  
+\solution{Option 2 -- Only looking at averages}
+
+\subq{3} Suppose the Census Bureau went out and actually sampled two times as many metropolitan areas, so our sample became larger. Would our 90\% confidence interval we calculate using the new data be larger, smaller, around the same size as our original interval, or can we not tell? 
+\begin{itemize}[label=\bubble]
+\item Larger
+\item Smaller
+\item Same size
+\item Cannot determine \\
+\end{itemize}  
+\solution{Option 2 -- Sample Size has gotten larger, so by CLT, our width of our confidence interval will becomesmaller}
+
+\subq{3} Assume we want to test the hypothesis that the average population crime rate is .03, with our alternative being that it's not. Give an interval of p-value cutoffs such that we can reject the null hypothesis that the average population crime rate is .03 given our confidence interval above. Explain your answer. Your range should be contained within the interval [0,1]. \\ \\ \\ \\ \\ \\
+\solution{[.1,1]. We know that any confidence interval of confidence less than 90\% is contained in the interval we created, so they would reject the null in all of these scenarios. If we increase the confidence, our interval gets larger, and we don't know, then, if our interval will contain .03.}  
+
+\subq{2} Suppose we repeat the process of creating 90\% confidence intervals many times using different samples from the population each time, with the hope of approximately 2,700 intervals containing the true population average crime rate. How many confidence intervals should we create? 
+\begin{itemize}[label=\bubble]
+\item 900
+\item 2,430
+\item 2,700
+\item 2,850
+\item 3,000
+\item 3,300
+\item None of the above
+\end{itemize}  
+\solution{Option 5 -- 3000*.9 = 2700, so we should make 3000 CIs.}
+\newpage
+\end{enumerate} 
