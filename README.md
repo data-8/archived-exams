@@ -1,5 +1,2 @@
-# archived-exams
-Archives of old exams from Data 8
-
-This repository is public.  Only put exams here if we are
-ready to make them publicly visible.
+# Data 8 Exams
+Public archive of old Data 8 exams
